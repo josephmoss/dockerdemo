@@ -1,12 +1,33 @@
 language: csharp
 mono: none
+sudo: required
 dist: xenial
 dotnet: 2.2
 
+# safelist
+branches:
+  only:
+  - test
+
 install:
 - dotnet restore
+
 
 script:
  - dotnet build
  - dotnet test DockerDemoTests/DockerDemoTests.csproj
 
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  target-branch: master # Commit to master instead of gh-pages
+  github-token: $GH_TOKEN
+  keep-history: true # By default, Travis uses push --force and wipes out commit history
+  verbose: true
+  on:
+    branch: master
+
+ global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+    - DOTNET_CLI_TELEMETRY_OPTOUT=1
