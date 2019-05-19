@@ -4,7 +4,6 @@ sudo: required
 dist: xenial
 dotnet: 2.2
 
-# safelist
 branches:
   only:
   - test
@@ -16,7 +15,6 @@ script:
  - dotnet build
  - dotnet test DockerDemoTests/DockerDemoTests.csproj
 
-
 deploy:
   provider: pages
   skip_cleanup: true
@@ -27,6 +25,6 @@ deploy:
   on:
     branch: master
 
- global:
-  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
-  - DOTNET_CLI_TELEMETRY_OPTOUT=1
+global:
+ - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+ - DOTNET_CLI_TELEMETRY_OPTOUT=1
