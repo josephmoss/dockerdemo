@@ -23,7 +23,7 @@ deploy:
   keep_history: true # By default, Travis uses push --force and wipes out commit history
   verbose: true
   on:
-    branch: master
+    branch: test
 
 global:
  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
