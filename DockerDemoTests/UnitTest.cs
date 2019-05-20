@@ -19,7 +19,7 @@ namespace DockerDemoTests
             var viewResult = Assert.IsType<ViewResult>(result);
             var viewBagMessage = Assert.IsAssignableFrom<string>(viewResult.ViewData["Message"]);
 
-            Assert.Equal("Hello world! 5/19/2019", viewBagMessage);
+            Assert.Equal("Hello world! 5/20/2019", viewBagMessage);
         }
     }
 }
