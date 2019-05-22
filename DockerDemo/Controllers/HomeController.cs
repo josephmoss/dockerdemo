@@ -12,7 +12,7 @@ namespace DockerDemo.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Message = "Hello world! 5/19/2019";
+            ViewBag.Message = "Hello world! 5/22/2019";
             return View();
         }
 
